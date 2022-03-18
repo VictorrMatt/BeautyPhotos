@@ -1,0 +1,260 @@
+/* == RESETS == */
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* == ROOTS == */
+.section {
+    margin: 0 2rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* == VARIABLES == */
+:root {
+    /* default properties */
+    --default-width: 70vw;
+    --body-font: 'Dm Sans', sans-serif;
+    --title-font: 'Poppins', sans-serif;
+}
+
+/* == REUSABLE CLASSES == */
+.grid {
+    display: grid;
+    gap: 4rem;
+}
+
+.container {
+    justify-self: center;
+    margin-top: 2rem;
+}
+
+.image-properties {
+    max-width: var(--default-width);
+    border-radius: 5px;
+}
+
+.image-box {
+    display: grid;
+    justify-content: center;
+}
+
+.text-box {
+    max-width: var(--default-width);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* == TEXTS PROPERTIES == */
+.title {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: var(--title-font);
+}
+
+.text {
+    font-family: var(--body-font);
+    color: grey;
+}
+
+/* == LOGO == */
+.logo {
+    font-family: var(--title-font);
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.logo:hover {
+    transform: translateY(-4px);
+}
+
+header section .logo span {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+header section p {
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: translateY(-7px)
+}
+/* == HEADER == */
+header {
+    width: 100vw;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header section {
+    display: flex;
+    height: 3.5rem;
+    justify-content: space-between;
+}
+
+header section div ,
+header section nav {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+header section div a {
+    margin-right: 1rem;
+}
+
+/* == HEADER MENUBAR == */
+.nav-sidebar {
+    position: fixed;
+    visibility: hidden;
+    transition: opacity 0.2s;
+    opacity: 0;
+}
+
+.nav-sidebar.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* == ICONS == */
+.icon {
+    color: rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s;
+}
+
+.icon:hover {
+    color: rgba(0, 0, 0, 1);
+    transform: translateY(-4px);
+    cursor: pointer;
+}
+
+/* == MAIN == */
+main section {
+    border-radius: 5px;
+}
+
+main section {
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+}
+
+body {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    padding: 1rem;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.08);
+}
+
+/* == BUTTON == */
+.button {
+    font-family: var(--body-font);
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    color: grey;
+    transition: background 0.2s, padding 0.2s;
+}
+
+.button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 2.5rem;
+    cursor: pointer;
+}
+
+.button:active {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* == FOOTER == */
+footer {
+    background: rgba(0, 0, 0, 0.05);
+    height: 3.5rem;
+}
+
+footer section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+footer section .logo {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.5rem;
+}
+
+/* == SERVICES == */
+#services {
+    background: white;
+    width: 100vw;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.08);
+    padding: 2rem 0;
+    display: grid;
+}
+
+#services div {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+
+#services div .text {
+    max-width: 70vw;
+    text-align: center;
+}
+
+/* == MEDIA QUERIES == */
+@media (min-width: 930px) {
+
+    /* == HEADER == */
+    header section {
+        margin: 0 8rem;
+    }
+
+    /* == FOOTER == */
+    footer section {
+        margin: 0 8rem;
+    }
+
+    /* == REUSABLE == */
+    .text {
+        max-width: 40vw;
+    }
+
+    .card {
+        max-width: 50vw;
+    } 
+    
+    #services div .text {
+        max-width: 50vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    .grid {
+        grid-auto-flow: column;
+    }
+
+    #services div .text {
+        max-width: 50vw;
+    }
+}
